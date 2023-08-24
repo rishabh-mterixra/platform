@@ -1,10 +1,7 @@
 future
 shutils
 requests
-googleapiclient
 google_auth_oauthlib
-google.auth
-googleapiclient
 pandas
 numpy
 re
