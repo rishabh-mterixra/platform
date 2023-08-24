@@ -360,7 +360,7 @@ def excel_conv_upd(list_dfs):
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
     for df,sn in zip(list_dfs,selected_geography):
         df.to_excel(writer,sheet_name=sn)
-    writer.save()
+    writer.close()
     processed_data = output.getvalue()
     return processed_data
 
@@ -683,7 +683,7 @@ def excel_conv_format(size_dfs_list,metrics_dfs_list):
     metrics_exp_df.reset_index(inplace=True)
     metrics_exp_df.to_excel(writer,sheet_name="Market Metrics Summary")
     
-    writer.save()
+    writer.close()
     processed_data = output.getvalue()
     return processed_data
 
@@ -714,7 +714,7 @@ def excel_conv_trend(size_trend_df,metrics_trend_df):
     size_trend_df.to_excel(writer,sheet_name="Market Size Trend")
     metrics_trend_df.reset_index(inplace=True)    
     metrics_trend_df.to_excel(writer,sheet_name="Market Metrics Trend")
-    writer.save()
+    writer.close()
     processed_data = output.getvalue()
     return processed_data
 
