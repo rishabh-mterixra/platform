@@ -2,8 +2,8 @@ future
 pickle
 os
 io
-import shutil
-import requests
+shutils
+requests
 mimetypes
 googleapiclient
 google_auth_oauthlib
