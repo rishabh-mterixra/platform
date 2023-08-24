@@ -788,7 +788,7 @@ else:
             missing_df['PERIOD']=j
             for i in missing_df.columns:
                 loop_add_subset_df[i]=missing_df[i].values
-            df=df.append(loop_add_subset_df)
+            df=pd.concat([df,loop_add_subset_df],axis=0)
 
 df=df.sort_values("PERIOD")
 # Subsetting dataframe for the defined date range:
