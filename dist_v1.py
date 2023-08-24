@@ -824,7 +824,7 @@ parent_area=(df[['STATES','AREA']].drop_duplicates()).rename(columns={"STATES":"
 parent_area['CHILD']=parent_area['CHILD'].apply(lambda name:name+"_AREA")
 
 parent_df=pd.concat([parent_zone,parent_states,parent_area])
-parent_df=parent_df.append(pd.DataFrame([['India','India_COUNTRY']],columns=['PARENT','CHILD']))
+parent_df=pd.concat([parent_df,pd.DataFrame([['India','India_COUNTRY']],columns=['PARENT','CHILD'])])
 
 parent_df=parent_df.set_index("CHILD")
 parent_dict=parent_df.T.to_dict()
