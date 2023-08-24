@@ -6,3 +6,4 @@ pandas
 numpy
 polars
 streamlit
+google-api-python-client
