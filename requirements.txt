@@ -4,10 +4,5 @@ requests
 google_auth_oauthlib
 pandas
 numpy
-re
 polars
 streamlit
-datetime
-warnings
-itertools
-functools
