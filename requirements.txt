@@ -1,5 +1,4 @@
 future
-io
 shutils
 requests
 mimetypes
