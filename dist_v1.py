@@ -661,7 +661,7 @@ def excel_conv_format(size_dfs_list,metrics_dfs_list):
         s_df=pd.concat([size_id_series,size_parent_series,s_df],axis=1)
         fin_size_lst.append(s_df)
     size_exp_df=pd.concat(fin_size_lst)
-    size_exp_df=size_exp_df.reset_index().set_index([('COUNTRY','',''),('Geography Type','',''),
+    size_exp_df=size_exp_df.reset_index().set_index([size_exp_df.reset_index().columns[0],('Geography Type','',''),
                 ('Parent Geo','',''),('BRANDS','','')])    
     size_exp_df.index.names=['Geography','Geography Type','Parent Geo','Brands']
     size_exp_df.reset_index(inplace=True)
@@ -677,7 +677,7 @@ def excel_conv_format(size_dfs_list,metrics_dfs_list):
         m_df=pd.concat([metrics_id_series,metrics_parent_series,m_df],axis=1)
         fin_metrics_lst.append(m_df)
     metrics_exp_df=pd.concat(fin_metrics_lst)  
-    metrics_exp_df=metrics_exp_df.reset_index().set_index([('COUNTRY','',''),('Geography Type','',''),
+    metrics_exp_df=metrics_exp_df.reset_index().set_index([metrics_exp_df.reset_index().columns[0],('Geography Type','',''),
                 ('Parent Geo','',''),('BRANDS','','')])
     metrics_exp_df.index.names=['Geography','Geography Type','Parent Geo','Brands']
     metrics_exp_df.reset_index(inplace=True)
