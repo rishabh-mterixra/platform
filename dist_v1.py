@@ -702,7 +702,7 @@ def trend_file_creation(type_market):
     req_df['Refer']=[x for x in range(len(req_df))]
     for j in all_freq_dfs[1:]:
         req_df=req_df.merge(j,how='outer',left_index=True,right_index=True,sort = True)
-    req_df=(((req_df.reset_index()).sort_values('Refer')).set_index([('COUNTRY',''),('Geography Type',''),
+    req_df=(((req_df.reset_index()).sort_values('Refer')).set_index([req_df.reset_index().columns[0],('Geography Type',''),
                 ('Parent Geo',''),('BRANDS','')])).drop(columns=['Refer'])
     req_df.index.names=['Geography','Geography Type','Parent Geo','Brands']
     return req_df    
