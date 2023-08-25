@@ -751,21 +751,26 @@ csv_name=all_csv[all_csv.str.contains(rule)].values[0]
 # Specifying file id required here.
 file_id=items_df.loc[csv_name,'id']
 
-request = service.files().get_media(fileId=file_id)
-fh = io.BytesIO()
-  
-# Initialise a downloader object to download the file
-downloader = MediaIoBaseDownload(fh, request, chunksize=1024*1024*1024)
-done = False
+@st.cache_resource
+def get_file(f_id):
+    request = service.files().get_media(fileId=f_id)
+    fh = io.BytesIO()
+      
+    # Initialise a downloader object to download the file
+    downloader = MediaIoBaseDownload(fh, request, chunksize=1024*1024*1024)
+    done = False
+    
+    while not done:
+        status, done = downloader.next_chunk()
+    fh.seek(0)      
+    
+    pl_df=pl.read_csv(fh)
+    pd_df=pl_df.to_pandas()
+    del pl_df
+    
+    return pd_df
 
-while not done:
-    status, done = downloader.next_chunk()
-fh.seek(0)      
-
-pl_df=pl.read_csv(fh)
-df=pl_df.to_pandas()
-del pl_df
-
+df=get_file(file_id)
 # Subsetting dataframe for the particular product:
 df=df[df['SUB CATEGORY']==product_m]
 
