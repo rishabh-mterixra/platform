@@ -764,6 +764,7 @@ fh.seek(0)
 
 pl_df=pl.read_csv(fh)
 df=pl_df.to_pandas()
+del pl_df
 
 # Subsetting dataframe for the particular product:
 df=df[df['SUB CATEGORY']==product_m]
