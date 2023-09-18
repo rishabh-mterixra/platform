@@ -784,7 +784,7 @@ unq_period=pd.to_datetime(df['PERIOD'].unique())
 if unq_period.min()>pd.Timestamp(day=1,month=5,year=2020):
     pass
 else:
-    for j in ['2020-04-01','2021-05-01']:
+    for j in ['01-04-2020','01-05-2021']:
         if j not in df['PERIOD'].unique():
             loop_add_subset_df=add_subset_df.copy()
             remove_cols=list(add_subset_df.columns)+['PERIOD']
