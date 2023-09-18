@@ -798,7 +798,7 @@ else:
 
 df=df.sort_values("PERIOD")
 # Subsetting dataframe for the defined date range:
-df['DATE']=pd.to_datetime(df['PERIOD'],format="%Y-%m-%d")
+df['DATE']=pd.to_datetime(df['PERIOD'])
 df['MONTH_YEAR']=df['DATE'].apply(lambda z:z.strftime("%y_%m"))   
 
 # Option to select Channel:
