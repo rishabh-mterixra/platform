@@ -807,7 +807,7 @@ selected_channel=st.multiselect("Select the Channels",channel_opts,default='Gene
 df=df[df['CHANNEL'].isin(selected_channel)]
     
 # Subseting dataframe for the specified time period:
-var_date_sel=pd.to_datetime(df['DATE'].unique())
+var_date_sel=sorted(pd.to_datetime(df['DATE'].unique()))
 var_date_sel=[sel_dt.strftime("%b-%y") for sel_dt in var_date_sel]
 start_date=st.selectbox("Select Start Date",var_date_sel,index=0)
 end_date=st.selectbox("Select End Date",var_date_sel,index=len(var_date_sel)-1)
