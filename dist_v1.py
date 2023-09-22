@@ -534,7 +534,7 @@ def trend_calc(period,metrics_type,op_flag=0):
 
 
 
-def display_func_2(final_geo_df_list,market_type):
+def display_func_2(final_geo_df_list,market_type,key_val):
     if len(selected_geography)==1:
         a1=st.tabs(selected_geography)[0]
         with a1:
@@ -545,10 +545,10 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx")           
+                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"00")           
         down_df=excel_conv_upd([final_geo_df_list[0]])
         st.download_button(label="Click To Download!",data=down_df,
-                           file_name=str(selected_geography[0])+" "+str(market_type)+" .xlsx",key="p0")
+                           file_name=str(selected_geography[0])+" "+str(market_type)+" .xlsx",key=key_val+"p0")
         
     elif len(selected_geography)==2:
         a1,a2=st.tabs(selected_geography)
@@ -560,7 +560,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx")
+                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"01")
         with a2:
             st.dataframe(final_geo_df_list[1],use_container_width=True)
             for f in selected_freq:
@@ -569,10 +569,10 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx")            
+                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"02")            
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1]])
         st.download_button(label="Click To Download!",data=down_df,
-                           file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(market_type)+" .xlsx",key="ppa")
+                           file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(market_type)+" .xlsx",key=key_val+"ppa")
     elif len(selected_geography)==3:
         a1,a2,a3=st.tabs(selected_geography)
         with a1:
@@ -583,7 +583,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx")
+                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"03")
         with a2:
             st.dataframe(final_geo_df_list[1],use_container_width=True)
             for f in selected_freq:
@@ -592,7 +592,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx")            
+                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"04")            
         with a3:
             st.dataframe(final_geo_df_list[2],use_container_width=True)
             for f in selected_freq:
@@ -601,10 +601,10 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[2])+" "+str(f)+" Trend" +" .xlsx")
+                                       file_name=str(selected_geography[2])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"05")
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1],final_geo_df_list[2]])
         st.download_button(label="Click To Download!",data=down_df,
-        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(market_type)+" .xlsx",key="ppppaa")    
+        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(market_type)+" .xlsx",key=key_val+"ppppaa")    
     elif len(selected_geography)==4:
         a1,a2,a3,a4=st.tabs(selected_geography)        
         with a1:
@@ -615,7 +615,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx")
+                                       file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"06")
         with a2:
             st.dataframe(final_geo_df_list[1],use_container_width=True)
             for f in selected_freq:
@@ -624,7 +624,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx")            
+                                       file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"07")            
         with a3:
             st.dataframe(final_geo_df_list[2],use_container_width=True)
             for f in selected_freq:
@@ -633,7 +633,7 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[2])+" "+str(f)+" Trend" +" .xlsx")    
+                                       file_name=str(selected_geography[2])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"08")    
         with a4:
             st.dataframe(final_geo_df_list[3],use_container_width=True)
             for f in selected_freq:
@@ -642,11 +642,11 @@ def display_func_2(final_geo_df_list,market_type):
                     st.dataframe(trend_df)
                     trend_file=excel_conv_upd([trend_df])
                     st.download_button(label="Click To Download Trend!",data=trend_file,
-                                       file_name=str(selected_geography[3])+" "+str(f)+" Trend" +" .xlsx")
+                                       file_name=str(selected_geography[3])+" "+str(f)+" Trend" +" .xlsx",key=key_val+"09")
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1],
                                 final_geo_df_list[2],final_geo_df_list[3]])
         st.download_button(label="Click To Download!",data=down_df,
-        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(selected_geography[3])+" "+str(market_type)+" .xlsx",key="zzz")    
+        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(selected_geography[3])+" "+str(market_type)+" .xlsx",key=key_val+"zzz")    
 
 def excel_conv_format(size_dfs_list,metrics_dfs_list):
     output = BytesIO()
@@ -1067,10 +1067,10 @@ df['Rolling_year']=df['Rolling_year'].apply(lambda ry: ry if (rl_chk[ry]==12) el
 t1,t2=st.tabs(['Market Size','Market Metrics'])    
 
 with t1:
-    display_func_2(exp_geo_size,'Market Size')            
+    display_func_2(exp_geo_size,'Market Size','msiz')            
     
 with t2:
-    display_func_2(exp_geo_metrics,'Market Metrics')                           
+    display_func_2(exp_geo_metrics,'Market Metrics','mmet')                           
     
 down_df=excel_conv_format(exp_geo_size,exp_geo_metrics)
 st.download_button(label="Click To Download Summary !",data=down_df,
