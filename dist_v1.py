@@ -548,7 +548,7 @@ def display_func_2(final_geo_df_list,market_type):
                                        file_name=str(selected_geography[0])+" "+str(f)+" Trend" +" .xlsx",key=f+"0")           
         down_df=excel_conv_upd([final_geo_df_list[0]])
         st.download_button(label="Click To Download!",data=down_df,
-                           file_name=str(selected_geography[0])+" "+str(market_type)+" .xlsx",key=file_name+"0")
+                           file_name=str(selected_geography[0])+" "+str(market_type)+" .xlsx",key="p0")
         
     elif len(selected_geography)==2:
         a1,a2=st.tabs(selected_geography)
@@ -572,7 +572,7 @@ def display_func_2(final_geo_df_list,market_type):
                                        file_name=str(selected_geography[1])+" "+str(f)+" Trend" +" .xlsx",key=f+"2")            
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1]])
         st.download_button(label="Click To Download!",data=down_df,
-                           file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(market_type)+" .xlsx",key=file_name+"a")
+                           file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(market_type)+" .xlsx",key="ppa")
     elif len(selected_geography)==3:
         a1,a2,a3=st.tabs(selected_geography)
         with a1:
@@ -604,7 +604,7 @@ def display_func_2(final_geo_df_list,market_type):
                                        file_name=str(selected_geography[2])+" "+str(f)+" Trend" +" .xlsx",key=f+"6")
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1],final_geo_df_list[2]])
         st.download_button(label="Click To Download!",data=down_df,
-        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(market_type)+" .xlsx",key=file_name+"aa")    
+        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(market_type)+" .xlsx",key="ppppaa")    
     elif len(selected_geography)==4:
         a1,a2,a3,a4=st.tabs(selected_geography)        
         with a1:
@@ -646,7 +646,7 @@ def display_func_2(final_geo_df_list,market_type):
         down_df=excel_conv_upd([final_geo_df_list[0],final_geo_df_list[1],
                                 final_geo_df_list[2],final_geo_df_list[3]])
         st.download_button(label="Click To Download!",data=down_df,
-        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(selected_geography[3])+" "+str(market_type)+" .xlsx",key=file_name+"z")    
+        file_name=str(selected_geography[0])+" "+str(selected_geography[1])+" "+str(selected_geography[2])+" "+str(selected_geography[3])+" "+str(market_type)+" .xlsx",key="zzz")    
 
 def excel_conv_format(size_dfs_list,metrics_dfs_list):
     output = BytesIO()
